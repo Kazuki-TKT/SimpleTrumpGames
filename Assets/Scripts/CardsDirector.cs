@@ -60,7 +60,7 @@ namespace KazukiTrumpGame
         }
 
         // トランプ作成
-        List<CardController> createCards(SuitType suittype)
+        List<CardController> createCards(SuitType suittype,int count=-1)
         {
             List<CardController> ret = new List<CardController>();
 
@@ -86,8 +86,13 @@ namespace KazukiTrumpGame
                     break;
             }
 
+            if (0 > count)
+            {
+                count = prefabcards.Count;
+            }
+
             // トランプ生成
-            for (int i = 0; i < prefabcards.Count; i++)
+            for (int i = 0; i < count; i++)
             {
                 GameObject obj = Instantiate(prefabcards[i]);
 
@@ -144,6 +149,19 @@ namespace KazukiTrumpGame
 
             return ret;
         }
+
+        /// <summary>
+        /// 神経衰弱で使うカードを作成
+        /// </summary>
+        /// <returns></returns>
+        public List<CardController> GetMemoryCards() {
+            List<CardController> ret = new List<CardController>();
+            ret.AddRange(createCards(SuitType.Spade,10));
+            ret.AddRange(createCards(SuitType.Diamond,10));
+            ShuffleCards(ret);
+            return ret;
+        }
+
         public void DestroyCard()
         {
             var cards = GameObject.FindGameObjectsWithTag("Card");

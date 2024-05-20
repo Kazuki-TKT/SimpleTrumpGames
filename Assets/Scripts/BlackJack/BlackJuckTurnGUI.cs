@@ -8,17 +8,13 @@ namespace KazukiTrumpGame.BlackJack
     /// <summary>
     /// ターンのタイプによって処理をするクラス
     /// </summary>
-    public class BlackJuckTurnGUI : MonoBehaviour
+    public class BlackJuckTurnGUI : CutInEventBase
     {
         BlackJackSceneDirector sceneDirector;
 
         //GUI
         [SerializeField]
         GameObject playerTurnObject, dealerTurnObject,playerBurstObject,dealerBurstObject,menuButtonObject;
-
-        //デフォルトのX座標と、ターゲットとなるX座標の値
-        [SerializeField]
-        float defultPositionX, targetPositionX;
 
         private void Start()
         {
@@ -42,10 +38,10 @@ namespace KazukiTrumpGame.BlackJack
             switch (newTurn)
             {
                 case TurnType.PLAYER://プレイヤー
-                    StartCoroutine(MoveTurnTextObject(playerTurnObject));
+                    StartCoroutine(MoveCutInTextObject(playerTurnObject,1.5f));
                     break;
                 case TurnType.DEALER://ディーラー
-                    StartCoroutine(MoveTurnTextObject(dealerTurnObject));
+                    StartCoroutine(MoveCutInTextObject(dealerTurnObject, 1.5f));
                     menuButtonObject.SetActive(false);
                     break;
                 case TurnType.INITIAL://初期
@@ -66,30 +62,6 @@ namespace KazukiTrumpGame.BlackJack
                     StartCoroutine(MoveBurstTextObject(dealerBurstObject, JudgeType.WIN));
                     break;
             }
-        }
-
-        //ターン演出用メソッド
-        IEnumerator MoveTurnTextObject(GameObject turnObject)
-        {
-            //オブジェクト表示
-            turnObject.SetActive(true);
-
-            //子オブジェクト取得
-            Transform childTransform = turnObject.transform.GetChild(0);
-            GameObject childObject = childTransform.gameObject;
-
-            //画面中央に移動
-            childObject.transform.DOLocalMoveX(0, 0.5f);
-
-            //指定秒待機
-            yield return new WaitForSeconds(1.5f);
-
-            //画面外へ移動
-            childObject.transform.DOLocalMoveX(targetPositionX, 0.5f).OnComplete(() =>
-            {
-                childObject.transform.DOLocalMoveX(defultPositionX, 0);//元の座標に戻す
-                turnObject.SetActive(false);//オブジェクト非表示
-            });
         }
 
         IEnumerator MoveBurstTextObject(GameObject burstObject,JudgeType judgeType)

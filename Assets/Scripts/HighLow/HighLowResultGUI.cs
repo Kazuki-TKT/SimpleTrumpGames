@@ -6,14 +6,12 @@ using DG.Tweening;
 
 namespace KazukiTrumpGame.HighLow
 {
-    public class HighLowResultGUI : MonoBehaviour
+    public class HighLowResultGUI : ResultGUIBase
     {
         [SerializeField]
-        TextMeshProUGUI resultText,winCountText,loseCountText,drawText;
+        TextMeshProUGUI winCountText,loseCountText,drawText;
 
-        [SerializeField]
-        GameObject[] setObjects;
-        public void EndGame(int win,int lose,int draw)
+        public void EndGame(int win, int lose, int draw)
         {
             SetObject(setObjects, false);
 
@@ -40,24 +38,9 @@ namespace KazukiTrumpGame.HighLow
             StartCoroutine(MovePanel(-50));
         }
 
-        public void ReStartGame()
+        protected override void OnRestartGame()
         {
-            SetObject(setObjects, true);
-            StartCoroutine(MovePanel(1000));
-        }
-
-        IEnumerator MovePanel(float positionY)
-        {
-            gameObject.transform.DOLocalMoveY(positionY, 0.5f).SetEase(Ease.Linear);
-            yield return new WaitForSeconds(0.5f);
-        }
-
-        void SetObject(GameObject[] objects,bool active)
-        {
-            foreach(GameObject gameObject in objects)
-            {
-                gameObject.SetActive(active);
-            }
+            // HighLowのリスタート処理を追加
         }
     }
 }

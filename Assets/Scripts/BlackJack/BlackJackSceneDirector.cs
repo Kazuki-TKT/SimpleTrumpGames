@@ -126,7 +126,11 @@ namespace KazukiTrumpGame.BlackJack
         //ÉQÅ[ÉÄÇé~ÇﬂÇÈ
         public void StopGame()
         {
-            cts.Cancel();
+            if (cts != null)
+            {
+                cts.Cancel();
+                cts.Dispose();
+            }
         }
 
         /// <summary>
