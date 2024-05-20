@@ -70,3 +70,12 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+/[Aa]ssets/2D Casual UI
+/[Aa]ssets/Fonts
+/[Aa]ssets/Image
+/[Aa]ssets/Playing Cards
+/[Aa]ssets/Plugins
+/[Aa]ssets/Prefabs
+/[Aa]ssets/Resources
+/[Aa]ssets/Sweet Land GUI
+/[Aa]ssets/TextMesh Pro
