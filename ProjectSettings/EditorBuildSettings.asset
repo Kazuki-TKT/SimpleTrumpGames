@@ -12,9 +12,12 @@ EditorBuildSettings:
     path: Assets/Scenes/HighLowScene.unity
     guid: 9feeee6eaae881147a70f02f3f338e53
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
     path: Assets/Scenes/BlackJackScene.unity
     guid: 9aec3aa1885d16a4fa49fd68adc65400
+  - enabled: 1
+    path: Assets/Scenes/PokerScene.unity
+    guid: c5835ac7587d75842a17229d7678d3cb
+  - enabled: 1
+    path: Assets/Scenes/MemoryScene.unity
+    guid: 343baa77f5dd27549b2baf3790b2b18e
   m_configObjects: {}

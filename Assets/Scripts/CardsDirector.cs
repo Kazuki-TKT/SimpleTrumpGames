@@ -60,7 +60,7 @@ namespace KazukiTrumpGame
         }
 
         // トランプ作成
-        List<CardController> createCards(SuitType suittype,int count=-1)
+        List<CardController> CreateCards(SuitType suittype,int count=-1)
         {
             List<CardController> ret = new List<CardController>();
 
@@ -124,10 +124,10 @@ namespace KazukiTrumpGame
         public List<CardController> GetHighLowCards()
         {
             List<CardController> ret = new List<CardController>();
-            ret.AddRange(createCards(SuitType.Spade));
-            ret.AddRange(createCards(SuitType.Club));
-            ret.AddRange(createCards(SuitType.Diamond));
-            ret.AddRange(createCards(SuitType.Heart));
+            ret.AddRange(CreateCards(SuitType.Spade));
+            ret.AddRange(CreateCards(SuitType.Club));
+            ret.AddRange(CreateCards(SuitType.Diamond));
+            ret.AddRange(CreateCards(SuitType.Heart));
 
             ShuffleCards(ret);
 
@@ -140,10 +140,10 @@ namespace KazukiTrumpGame
         public List<CardController> GetShuffleCards()
         {
             List<CardController> ret = new List<CardController>();
-            ret.AddRange(createCards(SuitType.Spade));
-            ret.AddRange(createCards(SuitType.Club));
-            ret.AddRange(createCards(SuitType.Diamond));
-            ret.AddRange(createCards(SuitType.Heart));
+            ret.AddRange(CreateCards(SuitType.Spade));
+            ret.AddRange(CreateCards(SuitType.Club));
+            ret.AddRange(CreateCards(SuitType.Diamond));
+            ret.AddRange(CreateCards(SuitType.Heart));
 
             ShuffleCards(ret);
 
@@ -156,8 +156,8 @@ namespace KazukiTrumpGame
         /// <returns></returns>
         public List<CardController> GetMemoryCards() {
             List<CardController> ret = new List<CardController>();
-            ret.AddRange(createCards(SuitType.Spade,10));
-            ret.AddRange(createCards(SuitType.Diamond,10));
+            ret.AddRange(CreateCards(SuitType.Spade,10));
+            ret.AddRange(CreateCards(SuitType.Diamond,10));
             ShuffleCards(ret);
             return ret;
         }

@@ -65,6 +65,7 @@ namespace KazukiTrumpGame
             {
                 anglez = 180;
             }
+            AudioManager.Instance.PlaySound_SE(AudioManager.Instance.trumpOpenSE);
             isFrontUp = frontup;
             Sequence sequence = DOTween.Sequence();
             sequence.Append(transform.DORotate(new Vector3(0, 0, anglez), 0.2f))

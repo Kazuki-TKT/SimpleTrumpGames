@@ -1211,6 +1211,7 @@ GameObject:
   - component: {fileID: 324363302}
   - component: {fileID: 324363301}
   - component: {fileID: 324363300}
+  - component: {fileID: 324363304}
   m_Layer: 5
   m_Name: Button_Title
   m_TagString: Untagged
@@ -1305,6 +1306,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 324363298}
   m_CullTransparentMesh: 1
+--- !u!114 &324363304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 324363298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71e8f119615c2d54e97b6f8378251e08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: TitleScene
 --- !u!1 &335097394
 GameObject:
   m_ObjectHideFlags: 0
@@ -2887,6 +2901,7 @@ GameObject:
   - component: {fileID: 1019598516}
   - component: {fileID: 1019598515}
   - component: {fileID: 1019598514}
+  - component: {fileID: 1019598518}
   m_Layer: 5
   m_Name: Button_Title
   m_TagString: Untagged
@@ -2981,6 +2996,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1019598512}
   m_CullTransparentMesh: 1
+--- !u!114 &1019598518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1019598512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71e8f119615c2d54e97b6f8378251e08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: TitleScene
 --- !u!1 &1030938316
 GameObject:
   m_ObjectHideFlags: 0
@@ -3075,13 +3103,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resultText: {fileID: 529309009}
-  winCountText: {fileID: 1272844339}
-  loseCountText: {fileID: 2010763830}
-  drawText: {fileID: 289169733}
   setObjects:
   - {fileID: 2085149621}
   - {fileID: 161995661}
   - {fileID: 1481790355}
+  winCountText: {fileID: 1272844339}
+  loseCountText: {fileID: 2010763830}
+  drawText: {fileID: 289169733}
 --- !u!1 &1032407243
 GameObject:
   m_ObjectHideFlags: 0

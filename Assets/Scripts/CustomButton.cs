@@ -1,6 +1,4 @@
 using DG.Tweening;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
@@ -22,6 +20,7 @@ namespace KazukiTrumpGame
         public void OnPointerClick(PointerEventData eventData) {
             onClickCallback?.Invoke();
             unityEvent?.Invoke();
+            AudioManager.Instance.PlaySound_SE(AudioManager.Instance.buttonClickSE);
         }
 
         // タップダウン  

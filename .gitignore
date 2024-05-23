@@ -79,3 +79,5 @@ crashlytics-build.properties
 /[Aa]ssets/Resources
 /[Aa]ssets/Sweet Land GUI
 /[Aa]ssets/TextMesh Pro
+/[Aa]ssets/Audio
+/[Aa]ssets/UI and Item Sound Effects
